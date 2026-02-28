@@ -16,7 +16,7 @@ for (let i = 0; i < testResults.length; i++) {
 }
 
 let totalTests = testResults.length;
-let passRate = ((passCount / totalTests) * 100).toFixed(2);
+let passRate = ((passCount / totalTests) * 100);
 
 //logic
 let verdict;
