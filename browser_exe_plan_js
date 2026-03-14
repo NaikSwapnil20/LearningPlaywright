@@ -1,0 +1,23 @@
+function browserExecutionPlan(allBrowsers, blockedBrowsers) {
+
+  const runnable = allBrowsers.filter(
+    browser => !blockedBrowsers.includes(browser)
+  );
+
+  const plan = `Run on: ${runnable.join(", ")} | Skip: ${blockedBrowsers.join(", ")}`;
+
+  return {
+    runnable: runnable,
+    blocked: blockedBrowsers,
+    plan: plan
+  };
+}
+
+
+// Example input
+const allBrowsers = ["chromium", "firefox", "webkit"];
+const blockedBrowsers = ["firefox"];
+
+const result = browserExecutionPlan(allBrowsers, blockedBrowsers);
+
+console.log(result);
